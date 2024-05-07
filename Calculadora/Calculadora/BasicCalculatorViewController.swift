@@ -12,6 +12,9 @@ class BasicCalculatorViewController: UIViewController {
     // MARK: - Properties
     
     private var resultLabel: UILabel!
+    private var operation: String = ""
+    private var previousValue: Double = 0
+
     
     // MARK: - Lifecycle
     
@@ -92,11 +95,44 @@ class BasicCalculatorViewController: UIViewController {
     }
     
     // MARK: - Actions
-    
+
     @objc private func buttonTapped(_ sender: UIButton) {
         guard let title = sender.title(for: .normal) else { return }
-        print("Button tapped: \(title)")
+        
+        switch title {
+        case "0"..."9":
+            if resultLabel.text == "0" {
+                resultLabel.text = title
+            } else {
+                resultLabel.text?.append(title)
+            }
+        case "+", "-", "x", "/":
+            operation = title
+            previousValue = Double(resultLabel.text ?? "") ?? 0
+            resultLabel.text?.append(" " + title + " ")
+        case "=":
+            let currentValue = Double(resultLabel.text ?? "") ?? 0
+            var result: Double = 0
+            switch operation {
+            case "+":
+                result = previousValue + currentValue
+            case "-":
+                result = previousValue - currentValue
+            case "x":
+                result = previousValue * currentValue
+            case "/":
+                result = previousValue / currentValue
+            default:
+                break
+            }
+            resultLabel.text = "\(result)"
+        case "C":
+            resultLabel.text = "0"
+        default:
+            break
+        }
     }
+
 }
 
 
