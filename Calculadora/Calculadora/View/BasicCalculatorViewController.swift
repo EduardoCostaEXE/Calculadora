@@ -14,7 +14,7 @@ class BasicCalculatorViewController: UIViewController {
     private var resultLabel: UILabel!
     private var operation: String = ""
     private var previousValue: Double = 0
-
+    private var currentNumber: String = ""
     
     // MARK: - Lifecycle
     
@@ -101,17 +101,15 @@ class BasicCalculatorViewController: UIViewController {
         
         switch title {
         case "0"..."9":
-            if resultLabel.text == "0" {
-                resultLabel.text = title
-            } else {
-                resultLabel.text?.append(title)
-            }
+            currentNumber += title
+            updateResultLabel()
         case "+", "-", "x", "/":
             operation = title
-            previousValue = Double(resultLabel.text ?? "") ?? 0
-            resultLabel.text?.append(" " + title + " ")
+            previousValue = Double(currentNumber) ?? 0
+            currentNumber = ""
+            resultLabel.text?.append(" \(operation) ")
         case "=":
-            let currentValue = Double(resultLabel.text ?? "") ?? 0
+            let currentValue = Double(currentNumber) ?? 0
             var result: Double = 0
             switch operation {
             case "+":
@@ -126,11 +124,21 @@ class BasicCalculatorViewController: UIViewController {
                 break
             }
             resultLabel.text = "\(result)"
+            currentNumber = "\(result)"
         case "C":
+            currentNumber = ""
+            operation = ""
+            previousValue = 0
             resultLabel.text = "0"
         default:
             break
         }
+    }
+
+    // MARK: - Helper Methods
+
+    private func updateResultLabel() {
+        resultLabel.text = currentNumber.isEmpty ? "0" : currentNumber
     }
 
 }
