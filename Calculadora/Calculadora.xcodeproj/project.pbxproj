@@ -15,6 +15,9 @@
 		4D028CF32BEAD12600F06919 /* BhaskaraCalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D028CF22BEAD12600F06919 /* BhaskaraCalculatorViewController.swift */; };
 		4D028CF52BEAD14900F06919 /* ConversionCalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D028CF42BEAD14900F06919 /* ConversionCalculatorViewController.swift */; };
 		4D028CF72BEAD15D00F06919 /* PercentageCalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D028CF62BEAD15D00F06919 /* PercentageCalculatorViewController.swift */; };
+		4DB88D092BED1B30008B4CD0 /* TemperatureConversionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB88D082BED1B30008B4CD0 /* TemperatureConversionView.swift */; };
+		4DB88D0C2BED1C8C008B4CD0 /* TemperatureConversionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB88D0B2BED1C8C008B4CD0 /* TemperatureConversionViewModel.swift */; };
+		4DB88D0E2BED210B008B4CD0 /* TemperatureUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB88D0D2BED210B008B4CD0 /* TemperatureUnit.swift */; };
 		4DBEE2192BEBBF6700A5F99E /* BhaskaraCalculatorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBEE2182BEBBF6700A5F99E /* BhaskaraCalculatorViewModel.swift */; };
 		4DBEE21C2BEBC0E000A5F99E /* BhaskaraCalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBEE21B2BEBC0E000A5F99E /* BhaskaraCalculatorView.swift */; };
 /* End PBXBuildFile section */
@@ -30,6 +33,9 @@
 		4D028CF22BEAD12600F06919 /* BhaskaraCalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BhaskaraCalculatorViewController.swift; sourceTree = "<group>"; };
 		4D028CF42BEAD14900F06919 /* ConversionCalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversionCalculatorViewController.swift; sourceTree = "<group>"; };
 		4D028CF62BEAD15D00F06919 /* PercentageCalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PercentageCalculatorViewController.swift; sourceTree = "<group>"; };
+		4DB88D082BED1B30008B4CD0 /* TemperatureConversionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureConversionView.swift; sourceTree = "<group>"; };
+		4DB88D0B2BED1C8C008B4CD0 /* TemperatureConversionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureConversionViewModel.swift; sourceTree = "<group>"; };
+		4DB88D0D2BED210B008B4CD0 /* TemperatureUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureUnit.swift; sourceTree = "<group>"; };
 		4DBEE2182BEBBF6700A5F99E /* BhaskaraCalculatorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BhaskaraCalculatorViewModel.swift; sourceTree = "<group>"; };
 		4DBEE21B2BEBC0E000A5F99E /* BhaskaraCalculatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BhaskaraCalculatorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -68,12 +74,21 @@
 				4D028CE02BEACCF000F06919 /* SceneDelegate.swift */,
 				4DBEE2172BEBBF3D00A5F99E /* Model */,
 				4DBEE21A2BEBC0AB00A5F99E /* View */,
+				4DB88D0A2BED1C6D008B4CD0 /* ViewModel */,
 				4DBEE2162BEBBF2C00A5F99E /* Controller */,
 				4D028CE72BEACCF300F06919 /* Assets.xcassets */,
 				4D028CE92BEACCF300F06919 /* LaunchScreen.storyboard */,
 				4D028CEC2BEACCF300F06919 /* Info.plist */,
 			);
 			path = Calculadora;
+			sourceTree = "<group>";
+		};
+		4DB88D0A2BED1C6D008B4CD0 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				4DB88D0B2BED1C8C008B4CD0 /* TemperatureConversionViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		4DBEE2162BEBBF2C00A5F99E /* Controller */ = {
@@ -91,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				4DBEE2182BEBBF6700A5F99E /* BhaskaraCalculatorViewModel.swift */,
+				4DB88D0D2BED210B008B4CD0 /* TemperatureUnit.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -99,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				4DBEE21B2BEBC0E000A5F99E /* BhaskaraCalculatorView.swift */,
+				4DB88D082BED1B30008B4CD0 /* TemperatureConversionView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -177,10 +194,13 @@
 				4DBEE21C2BEBC0E000A5F99E /* BhaskaraCalculatorView.swift in Sources */,
 				4D028CDF2BEACCF000F06919 /* AppDelegate.swift in Sources */,
 				4D028CE12BEACCF000F06919 /* SceneDelegate.swift in Sources */,
+				4DB88D092BED1B30008B4CD0 /* TemperatureConversionView.swift in Sources */,
 				4DBEE2192BEBBF6700A5F99E /* BhaskaraCalculatorViewModel.swift in Sources */,
 				4D028CF52BEAD14900F06919 /* ConversionCalculatorViewController.swift in Sources */,
 				4D028CF72BEAD15D00F06919 /* PercentageCalculatorViewController.swift in Sources */,
 				4D028CF32BEAD12600F06919 /* BhaskaraCalculatorViewController.swift in Sources */,
+				4DB88D0C2BED1C8C008B4CD0 /* TemperatureConversionViewModel.swift in Sources */,
+				4DB88D0E2BED210B008B4CD0 /* TemperatureUnit.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

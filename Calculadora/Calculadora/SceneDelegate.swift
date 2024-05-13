@@ -27,17 +27,19 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let bhaskaraCalculatorTabBarItem = UITabBarItem(title: "Bhaskara", image: UIImage(systemName: "function"), tag: 1)
         bhaskaraCalculatorVC.tabBarItem = bhaskaraCalculatorTabBarItem
         
-        let conversionCalculatorVC = ConversionCalculatorViewController()
-        conversionCalculatorVC.title = "Conversão"
-        let conversionCalculatorTabBarItem = UITabBarItem(title: "Conversão", image: UIImage(systemName: "arrow.2.circlepath"), tag: 2)
-        conversionCalculatorVC.tabBarItem = conversionCalculatorTabBarItem
+        let temperatureView = TemperatureConversionView(viewModel: TemperatureConversionViewModel())
+        let conversionTemperatureTabBarItem = UITabBarItem(title: "Conversão", image: UIImage(systemName: "arrow.2.circlepath"), tag: 2)
+        
+        let temperatureConversionVC = UIViewController()
+        temperatureConversionVC.view = temperatureView
+        temperatureConversionVC.tabBarItem = conversionTemperatureTabBarItem
         
         let percentageCalculatorVC = PercentageCalculatorViewController()
         percentageCalculatorVC.title = "Porcentagem"
         let percentageCalculatorTabBarItem = UITabBarItem(title: "Porcentagem", image: UIImage(systemName: "percent"), tag: 3)
         percentageCalculatorVC.tabBarItem = percentageCalculatorTabBarItem
 
-        tabBarController.viewControllers = [basicCalculatorVC, bhaskaraCalculatorVC, conversionCalculatorVC, percentageCalculatorVC]
+        tabBarController.viewControllers = [basicCalculatorVC, bhaskaraCalculatorVC, temperatureConversionVC, percentageCalculatorVC]
        
        window.rootViewController = tabBarController
         
